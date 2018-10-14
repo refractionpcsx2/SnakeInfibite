@@ -34,7 +34,6 @@ public class GameController : MonoBehaviour {
         scoreText.text = score.ToString();
         livesText.text = lives.ToString();
         isPaused = false;
-        Time.timeScale = 1;
     }
 
     private void Update()
@@ -95,11 +94,13 @@ public class GameController : MonoBehaviour {
 
     public void ReturnToMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
     public void RestartLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
